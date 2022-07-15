@@ -20,15 +20,16 @@
 <body>
 <div id="container"></div>
 <script>
-data = require('./travel_summary.json');
      anychart.onDocumentReady(function () {
-  anychart.data.loadJsonFile('./travel_summary.json', function (data) {
+  anychart.data.loadJsonFile('https://raw.githubusercontent.com/Gummyyy/Maralia_Transmission/main/web_viz_js/travel_summary.json', function (data) {
 
     // create a connector map chart instance
     var map = anychart.connector();
 
     // include the world map geodata
     map.geoData('anychart.maps.world');
+    // zoom to region
+    map.zoomto()
 
     // darken all regions
     map
